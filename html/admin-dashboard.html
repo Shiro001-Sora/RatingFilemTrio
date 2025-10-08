@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - MovieRating</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        #add-movie-btn {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="admin-page">
+    <header>
+        <nav>
+            <div class="logo">Trio Movie Rating</div>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="browse.html">Browse Movies</a></li>
+                <li><a href="admin-dashboard.html" class="active">Admin Dashboard</a></li>
+                <li><button id="admin-logout" class="btn">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Admin Dashboard</h1>
+        
+        <div class="admin-controls">
+            <div class="search-box">
+                <input type="text" id="admin-search" placeholder="Search movies...">
+            </div>
+        </div>
+        
+        <div class="admin-content">
+            <div class="movies-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Director</th>
+                            <th>Year</th>
+                            <th>Genre</th>
+                            <th>Rating</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-movies-list">
+                        <!-- Movies will be loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="text-align:center; margin-bottom:2rem;">
+                <button id="add-movie-btn" class="btn">Add Movie</button>
+            </div>
+            <div id="add-movie-modal" class="modal" style="display:none;">
+                <div class="modal-content">
+                    <span class="close-modal" id="close-add-movie">&times;</span>
+                    <h2>Add New Movie</h2>
+                    <form id="add-movie-form">
+                        <input type="text" name="title" placeholder="Title" required><br>
+                        <input type="text" name="director" placeholder="Director" required><br>
+                        <input type="number" name="year" placeholder="Year" required><br>
+                        <input type="text" name="genre" placeholder="Genre" required><br>
+                        <input type="number" name="rating" placeholder="Rating (1-5)" min="1" max="5" step="0.1" required><br>
+                        <textarea name="description" placeholder="Description" required></textarea><br>
+                        <input type="url" name="poster" placeholder="Poster URL" required><br>
+                        <button type="submit" class="btn">Add Movie</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MovieRating. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+</html>

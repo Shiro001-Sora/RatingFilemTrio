@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Movies - MovieRating</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Trio Movie Rating</div>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="browse.html">Browse Movies</a></li>
+                <li><a href="admin-login.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>All Movies</h1>
+        <div class="search-container">
+            <input type="text" id="movie-search" placeholder="Search movies by title...">
+        </div>
+        <div style="text-align:center; margin-bottom:2rem;">
+            <button id="add-movie-btn" class="btn">Add Movie</button>
+        </div>
+        <div class="movies-grid" id="all-movies">
+            <!-- Movies will be loaded dynamically -->
+        </div>
+
+        <div id="add-movie-modal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close-modal" id="close-add-movie">&times;</span>
+                <h2>Add New Movie</h2>
+                <form id="add-movie-form">
+                    <input type="text" name="title" placeholder="Title" required><br>
+                    <input type="text" name="director" placeholder="Director" required><br>
+                    <input type="number" name="year" placeholder="Year" required><br>
+                    <input type="text" name="genre" placeholder="Genre" required><br>
+                    <input type="number" name="rating" placeholder="Rating (1-5)" min="1" max="5" step="0.1" required><br>
+                    <textarea name="description" placeholder="Description" required></textarea><br>
+                    <input type="url" name="poster" placeholder="Poster URL" required><br>
+                    <button type="submit" class="btn">Add Movie</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MovieRating. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>
